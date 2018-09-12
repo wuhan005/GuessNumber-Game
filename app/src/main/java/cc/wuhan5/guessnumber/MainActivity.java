@@ -39,11 +39,8 @@ public class MainActivity extends AppCompatActivity {
         sumbitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkAnswer().equals("4A4B")){
-                    ansText1.setText(answerArray[0].toString());
-                    ansText2.setText(answerArray[1].toString());
-                    ansText3.setText(answerArray[2].toString());
-                    ansText4.setText(answerArray[3].toString());
+                if(checkAnswer().equals("A4B0")){
+                    showAnswer();
                     addLog("答对了！");
                 }else {
                     addLog(checkAnswer());
@@ -92,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         addLog("答案数字已生成。");
+        //addLog(numberList.get(0).toString() + numberList.get(1).toString()+ numberList.get(2).toString()+ numberList.get(3).toString());
 
     }
 
@@ -111,10 +109,18 @@ public class MainActivity extends AppCompatActivity {
                     B++;
                 }
             }
+
         }
 
-
+        //inputNum.setText("");
         return "A" + A.toString() + "B" + B.toString();
+    }
+
+    private void showAnswer(){
+        ansText1.setText(answerArray[0].toString());
+        ansText2.setText(answerArray[1].toString());
+        ansText3.setText(answerArray[2].toString());
+        ansText4.setText(answerArray[3].toString());
     }
 
     //添加提示框信息

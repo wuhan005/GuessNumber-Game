@@ -47,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
                     addLog("答对了！");
                 }else if(!checkAnswer().equals("")){
-                    addLog(checkAnswer());
+                    //没答对，输出提示
+                    addLog(inputNum.getText() + " " + checkAnswer());
                 }
             }
         });
